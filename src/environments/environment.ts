@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: 'your-api-key',
-    authDomain: 'your-auth-domain',
-    projectId: 'your-project-id',
-    storageBucket: 'your-storage-bucket',
-    messagingSenderId: 'your-messaging-sender-id',
-    appId: 'your-app-id',
-    measurementId: 'your-measurement-id'  // Optional
+    apiKey: 'AIzaSyD4wwvNdtAMDGIOlLH3nOBwhX9Lw9jrUE0',
+    authDomain: 'warehouse-app-46203.firebaseapp.com',
+    projectId: 'warehouse-app-46203',
+    storageBucket: 'warehouse-app-46203.appspot.com',
+    messagingSenderId: '646984011915',
+    appId: '1:646984011915:web:abc65d3b9b132e1ab1448e',
+    measurementId: 'G-T19P3V6K94'  // Optional
   }
 };
 
