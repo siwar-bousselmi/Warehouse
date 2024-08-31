@@ -1,0 +1,55 @@
+<div class="auth-container">
+  <div class="auth-left">
+    <h1>BIENVENUE SUR RICVA</h1>
+    <p>RICVA est une plateforme de suivi et de gestion du secteur agricole, de la production à la vente en passant par le financement.</p>
+  </div>
+  <div class="auth-right">
+    <div class="logo">Ricva</div>
+    <div class="speculations">
+      <h3>Spéculations</h3>
+      <div class="speculation-options">
+          <button [class.active]="selectedButton === 'cajou'" (click)="selectButton('cajou')">
+              <mat-icon class="cajou">spa</mat-icon>
+              Cajou
+              <mat-icon class="tick" *ngIf="selectedButton === 'cajou'">check_circle</mat-icon>
+          </button>
+          <button [class.active]="selectedButton === 'cacao'" (click)="selectButton('cacao')">
+              <mat-icon class="cacao">emoji_food_beverage</mat-icon>
+              Cacao
+              <mat-icon class="tick" *ngIf="selectedButton === 'cacao'">check_circle</mat-icon>
+          </button>
+          <button [class.active]="selectedButton === 'nature'" (click)="selectButton('nature')">
+              <mat-icon class="nature">whatshot</mat-icon>
+              Hévéa
+              <mat-icon class="tick" *ngIf="selectedButton === 'nature'">check_circle</mat-icon>
+          </button>
+          <button [class.active]="selectedButton === 'karite'" (click)="selectButton('karite')">
+              <mat-icon class="karite">nature</mat-icon>
+              Karité
+              <mat-icon class="tick" *ngIf="selectedButton === 'karite'">check_circle</mat-icon>
+          </button>
+      </div>
+    </div>
+    <div class="login-container">
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
+        <h3>Connexion</h3>
+        <div class="form-group">
+          <label for="email">Email ou Téléphone</label>
+          <input type="text" id="email" formControlName="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Mot de passe</label>
+          <div class="password-container">
+            <input [type]="showPassword ? 'text' : 'password'" id="password" formControlName="password" required>
+            <mat-icon class="toggle-password" (click)="togglePasswordVisibility()">
+              {{ showPassword ? 'visibility_off' : 'visibility' }}
+            </mat-icon>
+          </div>
+        </div>
+        <button type="submit">Connexion</button>
+        <a href="#" class="forgot-password">Vous avez oublié votre mot de passe ?</a>
+        <a href="#" class="reset-password">Réinitialiser le mot de passe</a>
+      </form>
+    </div>
+  </div>
+</div>
