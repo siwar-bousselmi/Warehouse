@@ -1,0 +1,287 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.layout-header {
+  display: flex;
+  flex-direction: column; /* Empile les éléments .header-left et .header-right verticalement */
+  background-color: #f7f7f7;
+  padding: 10px;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.header-left {
+  justify-content: space-between; /* Aligne les éléments à gauche et à droite */
+  h5 {
+    margin-right: 20px; /* Espacement entre le titre et le bouton "Créer un entrepôt" */
+    color: #bbb2b2;
+  }
+  .btn-create {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 4px;
+    background-color: #d47d41;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+}
+
+.header-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px; /* Space between the speculation options and the new action group */
+  .speculation-options {
+    display: flex;
+    justify-content: center; /* Centre les boutons horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    gap: 3.5px; /* Espacement entre les boutons */
+    margin-top: 10px; /* Espace au-dessus des boutons */
+    
+    button {
+      position: relative; /* Positionnement relatif pour le bouton */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white; /* Couleur de fond du bouton */
+      border: 2px solid #d47d41; /* Couleur de la bordure */
+      border-radius: 50px; /* Coins arrondis */
+      padding: 5px 10px; /* Espacement intérieur du bouton */
+      cursor: pointer; /* Curseur pointer au survol */
+      transition: background-color 0.3s, color 0.3s; /* Effet de transition */
+      font-size: 0.9rem; /* Taille du texte du bouton */
+
+      .tick {
+        position: absolute;
+        top: 5px; /* Position du tick depuis le bord supérieur du bouton */
+        right: 5px; /* Position du tick depuis le bord droit du bouton */
+        font-size: 20px;
+        color: #098a1a; /* Couleur verte pour le tick */
+        display: none; /* Caché par défaut */
+    }
+    
+      .cajou {
+        color: #f87d18; /* Couleur pour l'icône de Cajou */
+    }
+    
+    .cacao {
+        color: #703421; /* Couleur pour l'icône de Cacao */
+    }
+    
+    .nature {
+        color: #388e3c; /* Couleur pour l'icône de Hévéa */
+    }
+    
+    .karite {
+        color: #f19012; /* Couleur pour l'icône de Karité */
+    }
+
+      .mat-icon {
+        font-size: 24px; /* Taille de l'icône Material */
+        margin-right: 1px; /* Espace entre l'icône et le texte */      }
+
+      .tick {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: #28a745;
+        display: none;
+
+        &.active {
+          display: inline;
+        }
+      }
+    }
+  }
+
+.btn-notification {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  gap: 5px;
+  font-size: 15px; /* Size of the icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-notification:hover {
+  background-color: #0056b3;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.flag-icon {
+  width: 20px; /* Adjust size of flag icons */
+  height: 20px;
+}
+
+.arrow {
+  font-size: 12px; /* Size of the dropdown arrow */
+}
+
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000; /* Ensure dropdown is above other content */
+  padding: 5px;
+}
+
+.dropdown-container:hover .dropdown-menu {
+  display: block; /* Show dropdown on hover */
+}
+
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 12px;
+  color: #333;
+  gap: 10px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-logo {
+  width: 30px; /* Adjust size of user logo */
+  height: 30px;
+  border-radius: 50%;
+}
+
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Adjust the space between items as needed */
+}
+
+.company-logo {
+  width: 24px; /* Adjust size of company logos */
+  height: 24px;
+  border-radius: 4px; /* Optional: adjust if logos are square or rounded */
+}
+
+.company-name {
+  margin-right: 5px;
+  font-size: 12px;
+
+}
+
+.arrow {
+  font-size: 12px; /* Size of the dropdown arrow */
+}
+
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000; /* Ensure dropdown is above other content */
+  padding: 5px;
+  width: max-content;
+}
+
+.dropdown-container:hover .dropdown-menu {
+  display: block; /* Show dropdown on hover */
+}
+
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  gap: 10px; /* Space between logo and name in dropdown */
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #e5e7eb;
+  margin: 30px;
+
+  ul {
+    list-style: none;
+    padding: 20px;
+
+    li {
+      position: relative;
+      margin-bottom: 15px;
+      padding: 10px;
+
+      a {
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+          color: #d47d41;
+          background-color: #dfccd4; /* Change this color to fit your design */
+
+        }
+        &::after {
+          content: "12"; /* Number to be displayed */
+          position: absolute;
+          right: 10px; /* Adjust this value to position the number properly */
+          font-weight: bold;
+          font-size: 14px; /* Adjust font size as needed */
+        }
+      }
+    }
+  }
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
