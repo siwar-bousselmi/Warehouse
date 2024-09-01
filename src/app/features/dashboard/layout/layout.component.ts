@@ -9,13 +9,16 @@ import { Router } from '@angular/router';
 })
 export class LayoutComponent {
   selectedButton: string | null = null;
+  breadcrumbs: Array<{ label: string, url?: string }> = [
+    { label: 'Tableau de Bord', url: '/warehouses' },
+    { label: 'Administration', url: '/warehouses' },
+    
+  ];
+
   constructor(private router: Router) {}
 
   selectButton(button: string) {
     this.selectedButton = button;
   }
 
-  navigateToCreateWarehouse() {
-    this.router.navigate(['/create']);
-  }
 }

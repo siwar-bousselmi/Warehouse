@@ -155,18 +155,97 @@
   padding: 0;
 }
 
+.pagination-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 8px;
+}
+
 .mat-paginator {
-  margin-top: 20px;
-}
-
-.mat-paginator .mat-paginator-page-size {
-  margin-right: 10px;
-}
-
-.mat-paginator .mat-paginator-range-label {
-  margin: 0 10px;
+  flex: 1;
 }
 
 h3 {
   color: #d47d41; /* Match the image header color */
+}
+
+
+/* Alignement et espacement des boutons dans la colonne Actions */
+.action-buttons {
+  display: flex;
+  gap: 8px; /* Espacement uniforme entre les boutons */
+  align-items: center; /* Aligner les boutons verticalement */
+}
+
+.action-buttons button {
+  padding: 0; /* Enlever le padding par défaut pour un alignement précis */
+  margin: 0; /* Enlever la marge par défaut */
+  color: #d47d41; /* Couleur des icônes */
+}
+
+.view-button mat-icon {
+  color: #888; /* Couleur pour le bouton de visualisation */
+}
+
+.edit-button mat-icon {
+  color: #4CAF50; /* Couleur pour le bouton d'édition */
+}
+
+.delete-button mat-icon {
+  color: #fff; /* Couleur pour le bouton de suppression */
+}
+
+.view-button:hover,
+.edit-button:hover,
+.delete-button:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Effet de survol */
+  border-radius: 4px; /* Coins arrondis pour le survol */
+}
+
+/* Style pour le bouton de suppression */
+.delete-button {
+  background-color: #d47d41; /* Couleur de fond du bouton */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 1px;
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 1;
+}
+
+.delete-button:hover {
+  background-color: #b95e2f; /* Couleur de fond au survol */
+}
+
+.delete-button:focus {
+  outline: none;
+}
+
+.header-container {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  margin-bottom: 20px; /* Space below the header */
+}
+
+.btn-create {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 4px;
+  background-color: #d47d41;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }

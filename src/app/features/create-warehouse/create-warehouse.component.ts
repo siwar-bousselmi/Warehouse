@@ -12,7 +12,11 @@ import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/c
 })
 export class CreateWarehouseComponent implements OnInit {
   warehouseForm: FormGroup;
-
+  breadcrumbs: Array<{ label: string, url?: string }> = [
+    { label: 'Tableau de Bord', url: '/warehouses' },
+    { label: 'Administration', url: '/warehouses' },
+    { label: 'Créer un entrepôt',url: 'warehouses/create' }
+  ];
   constructor(
     private fb: FormBuilder, 
     private router: Router, 

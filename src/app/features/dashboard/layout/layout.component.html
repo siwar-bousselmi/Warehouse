@@ -62,15 +62,11 @@
         </div>
       </div>
     </div>
-    <div class="header-left">
-      <h5>Tableau de Bord > Administration</h5>
-      <button class="btn-create" (click)="navigateToCreateWarehouse()">Créer un entrepôt</button>
-    </div>
+    
   </header>
 
   <div class="layout-body">
-
-
+    <app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
     <main class="main-content">
       <router-outlet></router-outlet>
     </main>

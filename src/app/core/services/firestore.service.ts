@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+import { Warehouse } from '../models/warehouse.model';
+
 
 
 @Injectable({
@@ -18,11 +20,24 @@ export class FirestoreService {
     return this.firestore.collection('warehouses').doc(id).set(warehouseData);
   }
 
+  // Update a warehouse
+  updateWarehouse(id: string, warehouse: Warehouse): Observable<void> {
+    return new Observable(observer => {
+      this.firestore.collection('warehouses').doc(id).update(warehouse)
+        .then(() => {
+          observer.next();
+          observer.complete();
+        })
+        .catch(error => {
+          observer.error(error);
+        });
+    });
+  }
 
-  getWarehouses(): Observable<Element[]> {
+  getWarehouses(): Observable<Warehouse[]> {
     return this.firestore.collection('warehouses').snapshotChanges().pipe(
       map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as Omit<Element, 'id'>;
+        const data = a.payload.doc.data() as Omit<Warehouse, 'id'>;
         const id = a.payload.doc.id;
         return { id, ...data };
       }))
@@ -31,5 +46,12 @@ export class FirestoreService {
 
   deleteWarehouse(id: any): Promise<void> {
     return this.firestore.collection('warehouses').doc(id).delete();
+  }
+
+  getWarehouseById(id: string): Observable<Warehouse | null> {
+    return this.firestore.doc<Warehouse>(`warehouses/${id}`).valueChanges().pipe(
+      map(data => data ? data : null),
+      catchError(() => of(null))
+    );
   }
 }

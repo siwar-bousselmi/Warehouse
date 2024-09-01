@@ -28,6 +28,9 @@ import { RouterModule } from '@angular/router';
 import { LayoutComponent } from './features/dashboard/layout/layout.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CreateWarehouseComponent } from './features/create-warehouse/create-warehouse.component';
+import {WarehouseEditComponent } from './features/warehouse-edit/warehouse-edit.component';
+import { HeaderComponent } from './features/header/header.component';
+import { BreadcrumbComponent } from './shared/components/breadcrumb/breadcrumb.component'; // Ajustez le chemin
 
 
 @NgModule({
@@ -37,8 +40,10 @@ import { CreateWarehouseComponent } from './features/create-warehouse/create-war
     ConfirmDialogComponent,
     WarehousesComponent,
     LayoutComponent,   
-    CreateWarehouseComponent
-
+    CreateWarehouseComponent,
+    HeaderComponent,
+    WarehouseEditComponent,
+    BreadcrumbComponent
   ],
   imports: [
     MatFormFieldModule,
