@@ -34,7 +34,9 @@ export class CreateWarehouseComponent implements OnInit {
 
   onSubmit(): void {
     if (this.warehouseForm.valid) {
-      const dialogRef = this.dialog.open(ConfirmDialogComponent);
+      const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+        data: { message: 'Voulez-vous enregistrer ?' }
+      });
 
       dialogRef.afterClosed().subscribe(result => {
         if (result === true) {

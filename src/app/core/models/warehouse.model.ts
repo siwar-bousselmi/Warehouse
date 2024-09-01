@@ -1,5 +1,6 @@
 export interface Warehouse {
-    label: string;
+    id: string;
+    libelle: string;
     longitude: number;
     surface: number;
     latitude: number;
