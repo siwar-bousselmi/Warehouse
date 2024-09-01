@@ -1,0 +1,129 @@
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.delete-button {
+  background-color: #d47d41; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  border: none; /* Supprime les bordures */
+  border-radius: 10px; /* Coins légèrement arrondis */
+  padding: 1px; /* Réduit l'espacement intérieur */
+  font-size: 10px; /* Réduit la taille du texte */
+  cursor: pointer; /* Changement du curseur pour indiquer que c'est cliquable */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Pour le rendre plus petit et carré */
+  width: 40px; /* Largeur du bouton */
+  height: 40px; /* Hauteur du bouton */
+  text-align: center;
+  line-height: 1; /* Alignement du texte */
+}
+
+.delete-button:hover {
+  background-color: #b95e2f; /* Couleur de fond au survol */
+}
+
+.delete-button:focus {
+  outline: none; /* Supprime le contour par défaut au focus */
+}
+
+
+.search-zone {
+  display: flex;
+  align-items: center;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 10px 40px 10px 10px; /* Adjust padding to make room for the icon */
+  border: 1px solid #ccc;
+  border-radius: 20px; /* Rounded corners */
+  font-size: 16px;
+  width: 300px; /* Adjust width as needed */
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px; /* Adjust this value to position the icon properly */
+  font-size: 24px; /* Size of the icon */
+  color: #888; /* Color of the icon */
+  pointer-events: none; /* Prevents the icon from interfering with input */
+}
+
+
+.mat-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0; /* Supprime l'espace entre les cellules */
+
+}
+
+.mat-header-cell {
+  font-weight: bold;
+  background-color: #f1f1f1; /* Couleur d'arrière-plan des en-têtes */
+  color: #333; /* Couleur du texte des en-têtes */
+  border-top-left-radius: 8px; /* Coins arrondis en haut à gauche */
+  border-top-right-radius: 8px; /* Coins arrondis en haut à droite */
+}
+
+.mat-cell {
+  padding: 8px;
+  border: none; /* Supprime les bordures entre les cellules */
+
+}
+
+.mat-header-row {
+  background-color: #f1f1f1; /* Couleur d'arrière-plan de la ligne d'en-tête */
+}
+
+/* Style pour la ligne de pied de table (si vous avez besoin de lignes de pied de table) */
+.mat-footer-row {
+  background-color: #f1f1f1; /* Couleur d'arrière-plan de la ligne de pied de table */
+}
+
+/* Coins arrondis en bas de la table */
+.mat-table-container {
+  border-radius: 8px; /* Coins arrondis pour la table */
+  overflow: hidden; /* Assure que le contenu ne dépasse pas les coins arrondis */
+  border: 1px solid #ddd; /* Bordure légère autour de la table */
+}
+
+/* Supprime les lignes de séparation */
+.mat-cell,
+.mat-header-cell {
+  border-bottom: none; /* Supprime les lignes de séparation entre les cellules */
+}
+
+.mat-header-cell,
+.mat-cell {
+  background-color: transparent; /* Arrière-plan transparent pour les cellules */
+}
+
+.mat-icon-button {
+  padding: 0;
+}
+
+.mat-paginator {
+  margin-top: 20px;
+}
+
+.mat-paginator .mat-paginator-page-size {
+  margin-right: 10px;
+}
+
+.mat-paginator .mat-paginator-range-label {
+  margin: 0 10px;
+}
+h3 {
+  color: #d47d41;
+}
+

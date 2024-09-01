@@ -263,6 +263,8 @@
       a {
         text-decoration: none;
         font-weight: bold;
+        color: #272424;
+
 
         &:hover {
           color: #d47d41;
@@ -284,4 +286,12 @@
 .main-content {
   flex-grow: 1;
   padding: 20px;
+  background-color: #fff;
+  overflow: auto; /* Ensure content is scrollable if it overflows */
+}
+
+/* Ensure the main content is placed next to the sidebar */
+.layout-body {
+  display: flex;
+  flex: 1; /* Take up remaining space after header */
 }

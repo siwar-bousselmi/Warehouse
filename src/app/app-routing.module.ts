@@ -7,24 +7,16 @@ import { LayoutComponent } from './features/dashboard/layout/layout.component';
 
 const routes: Routes = [
   { path: 'login', component: AuthComponent },
-  { 
-    path: 'dashboard', 
-    component: LayoutComponent, 
+  {
+    path: '',
+    component: LayoutComponent,
     children: [
-      { path: '', component: LayoutComponent },
-      // autres routes enfants
-    ] 
+      { path: 'warehouses', component: WarehousesComponent },
+      // Define other child routes here
+      { path: '', redirectTo: 'warehouses', pathMatch: 'full' },
+    ]
   },
-  { 
-    path: 'warehouses', 
-    component: WarehousesComponent, 
-    children: [
-      { path: '', component: WarehousesComponent },
-      // autres routes enfants
-    ] 
-  },
-  { path: '', redirectTo: 'login', pathMatch: 'full' }
-
+  { path: '**', redirectTo: '' } // Wildcard route for handling unknown routes
 ];
 
 @NgModule({

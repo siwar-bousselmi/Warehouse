@@ -1,75 +1,74 @@
 <div class="layout-container">
-    <header class="layout-header">
-        <div class="header-right">
-            <div class="speculation-options">
-                <button [class.active]="selectedButton === 'cajou'" (click)="selectButton('cajou')">
-                    <mat-icon class="cajou">spa</mat-icon>
-                    Cajou
-                    <mat-icon class="tick" *ngIf="selectedButton === 'cajou'">check_circle</mat-icon>
-                </button>
-                <button [class.active]="selectedButton === 'cacao'" (click)="selectButton('cacao')">
-                    <mat-icon class="cacao">emoji_food_beverage</mat-icon>
-                    Cacao
-                    <mat-icon class="tick" *ngIf="selectedButton === 'cacao'">check_circle</mat-icon>
-                </button>
-                <button [class.active]=" selectedButton=== 'nature'" (click)="selectButton('nature')">
-                    <mat-icon class="nature">whatshot</mat-icon>
-                    Hévéa
-                    <mat-icon class="tick" *ngIf="selectedButton === 'nature'">check_circle</mat-icon>
-                </button>
-                <button [class.active]="selectedButton === 'karite'" (click)="selectButton('karite')">
-                    <mat-icon class="karite">nature</mat-icon>
-                    Karité
-                    <mat-icon class="tick" *ngIf="selectedButton === 'karite'">check_circle</mat-icon>
-                </button>
-            </div>
-           
-            <div class="header-actions">
-              <button class="btn-notification">
-                  <i class="fa fa-bell"></i> <!-- Notification icon -->
-                  <span>12</span>
-              </button>
-            
-              <!-- Language Dropdown -->
-              <div class="dropdown-container">
-                <button class="dropdown-button">
-                  <img src="assets/fr.jpg" alt="Current Language Flag" class="flag-icon"> <!-- Default flag icon -->
-                  <span class="arrow">▼</span> <!-- Dropdown arrow -->
-                </button>
-                <div class="dropdown-menu">
-                  <a href="#"><img src="assets/fr.jpg" alt="French Flag" class="flag-icon"> French</a>
-                  <a href="#"><img src="assets/uk.jpg" alt="English Flag" class="flag-icon"> English</a>
-                  <!-- Add more languages here -->
-                </div>
-              </div>
-            
-              <!-- Company Dropdown -->
-              <div class="dropdown-container">
-                <button class="dropdown-button">
-                  <img src="assets/capSikan.png" alt="Company Logo" class="company-logo"> <!-- Default company logo -->
-                  <span class="company-name">CAP SIKAN</span> <!-- Company name -->
-                  <span class="arrow">▼</span> <!-- Dropdown arrow -->
-                </button>
-                <div class="dropdown-menu">
-                  <a href="#">
-                    <img src="assets/capSikan.png" alt="CAP SIKAN Logo" class="company-logo"> CAP SIKAN
-                  </a>
-                  <a href="#">
-                    <img src="assets/capSikan.png" alt="Other Company Logo" class="company-logo"> Other Company
-                  </a>
-                  <a href="#">
-                    <img src="assets/capSikan.png" alt="Another Company Logo" class="company-logo"> Another Company
-                  </a>
-                  <!-- Add more companies here -->
-                </div>
-              </div>
-            </div>
+  <header class="layout-header">
+    <div class="header-right">
+      <div class="speculation-options">
+        <button [class.active]="selectedButton === 'cajou'" (click)="selectButton('cajou')">
+          <mat-icon class="cajou">spa</mat-icon>
+          Cajou
+          <mat-icon class="tick" *ngIf="selectedButton === 'cajou'">check_circle</mat-icon>
+        </button>
+        <button [class.active]="selectedButton === 'cacao'" (click)="selectButton('cacao')">
+          <mat-icon class="cacao">emoji_food_beverage</mat-icon>
+          Cacao
+          <mat-icon class="tick" *ngIf="selectedButton === 'cacao'">check_circle</mat-icon>
+        </button>
+        <button [class.active]=" selectedButton === 'nature'" (click)="selectButton('nature')">
+          <mat-icon class="nature">whatshot</mat-icon>
+          Hévéa
+          <mat-icon class="tick" *ngIf="selectedButton === 'nature'">check_circle</mat-icon>
+        </button>
+        <button [class.active]="selectedButton === 'karite'" (click)="selectButton('karite')">
+          <mat-icon class="karite">nature</mat-icon>
+          Karité
+          <mat-icon class="tick" *ngIf="selectedButton === 'karite'">check_circle</mat-icon>
+        </button>
+      </div>
+      <div class="header-actions">
+        <button class="btn-notification">
+          <i class="fa fa-bell"></i> <!-- Notification icon -->
+          <span>12</span>
+        </button>
+        <!-- Language Dropdown -->
+        <div class="dropdown-container">
+          <button class="dropdown-button">
+            <img src="assets/fr.jpg" alt="Current Language Flag" class="flag-icon"> <!-- Default flag icon -->
+            <span class="arrow">▼</span> <!-- Dropdown arrow -->
+          </button>
+          <div class="dropdown-menu">
+            <a href="#"><img src="assets/fr.jpg" alt="French Flag" class="flag-icon"> French</a>
+            <a href="#"><img src="assets/uk.jpg" alt="English Flag" class="flag-icon"> English</a>
+            <!-- Add more languages here -->
+          </div>
         </div>
-        <div class="header-left">
-          <h5>Tableau de Bord > Administration</h5>
-          <button class="btn-create">Créer un entrepôt</button>
+        <!-- Company Dropdown -->
+        <div class="dropdown-container">
+          <button class="dropdown-button">
+            <img src="assets/capSikan.png" alt="Company Logo" class="company-logo"> <!-- Default company logo -->
+            <span class="company-name">CAP SIKAN</span> <!-- Company name -->
+            <span class="arrow">▼</span> <!-- Dropdown arrow -->
+          </button>
+          <div class="dropdown-menu">
+            <a href="#">
+              <img src="assets/capSikan.png" alt="CAP SIKAN Logo" class="company-logo"> CAP SIKAN
+            </a>
+            <a href="#">
+              <img src="assets/capSikan.png" alt="Other Company Logo" class="company-logo"> Other Company
+            </a>
+            <a href="#">
+              <img src="assets/capSikan.png" alt="Another Company Logo" class="company-logo"> Another Company
+            </a>
+            <!-- Add more companies here -->
+          </div>
         </div>
-    </header>
+      </div>
+    </div>
+    <div class="header-left">
+      <h5>Tableau de Bord > Administration</h5>
+      <button class="btn-create">Créer un entrepôt</button>
+    </div>
+  </header>
+
+  <div class="layout-body">
     <aside class="sidebar">
       <ul>
         <li><a routerLink="/campaigns">Campagnes</a></li>
@@ -84,9 +83,9 @@
         <li><a routerLink="/zonings">Zonages</a></li>
       </ul>
     </aside>
-  
+
     <main class="main-content">
-      <ng-content></ng-content> <!-- Placez ici le contenu spécifique aux pages -->
+      <router-outlet></router-outlet>
     </main>
   </div>
-  
+</div>
