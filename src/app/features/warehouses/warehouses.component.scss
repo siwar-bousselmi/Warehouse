@@ -1,37 +1,86 @@
+.main-content {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  height: 100vh; /* Adjust height as needed */
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #e5e7eb;
+  margin: 30px;
+
+  ul {
+    list-style: none;
+    padding: 20px;
+
+    li {
+      position: relative;
+      margin-bottom: 15px;
+      padding: 10px;
+
+      a {
+        text-decoration: none;
+        font-weight: bold;
+        color: #554d4d;
+
+
+        &:hover {
+          color: #d47d41;
+          background-color: #dfccd4; /* Change this color to fit your design */
+
+        }
+        &::after {
+          content: "12"; /* Number to be displayed */
+          position: absolute;
+          right: 10px; /* Adjust this value to position the number properly */
+          font-weight: bold;
+          font-size: 14px; /* Adjust font size as needed */
+        }
+      }
+    }
+  }
+}
+.content {
+  flex: 1; /* Takes up the remaining space */
+  padding: 20px;
+  overflow: auto; /* Allows scrolling if content overflows */
+}
+/* Table Header */
 .table-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  
 }
 
+/* Delete Button Style */
 .delete-button {
-  background-color: #d47d41; /* Couleur de fond */
-  color: white; /* Couleur du texte */
-  border: none; /* Supprime les bordures */
-  border-radius: 10px; /* Coins légèrement arrondis */
-  padding: 1px; /* Réduit l'espacement intérieur */
-  font-size: 10px; /* Réduit la taille du texte */
-  cursor: pointer; /* Changement du curseur pour indiquer que c'est cliquable */
+  background-color: #d47d41; /* Match the image background color */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 1px;
+  font-size: 10px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Pour le rendre plus petit et carré */
-  width: 40px; /* Largeur du bouton */
-  height: 40px; /* Hauteur du bouton */
+  width: 40px;
+  height: 40px;
   text-align: center;
-  line-height: 1; /* Alignement du texte */
+  line-height: 1;
 }
 
 .delete-button:hover {
-  background-color: #b95e2f; /* Couleur de fond au survol */
+  background-color: #b95e2f; /* Darker shade on hover */
 }
 
 .delete-button:focus {
-  outline: none; /* Supprime le contour par défaut au focus */
+  outline: none;
 }
 
-
+/* Search Zone */
 .search-zone {
   display: flex;
   align-items: center;
@@ -44,68 +93,62 @@
 }
 
 .search-input {
-  padding: 10px 40px 10px 10px; /* Adjust padding to make room for the icon */
+  padding: 10px 40px 10px 10px;
   border: 1px solid #ccc;
-  border-radius: 20px; /* Rounded corners */
+  border-radius: 20px;
   font-size: 16px;
-  width: 300px; /* Adjust width as needed */
+  width: 300px;
 }
 
 .search-icon {
   position: absolute;
-  right: 10px; /* Adjust this value to position the icon properly */
-  font-size: 24px; /* Size of the icon */
-  color: #888; /* Color of the icon */
-  pointer-events: none; /* Prevents the icon from interfering with input */
+  right: 10px;
+  font-size: 24px;
+  color: #888;
+  pointer-events: none;
 }
 
-
+/* Table Styling */
 .mat-table {
   width: 100%;
   border-collapse: collapse;
-  border-spacing: 0; /* Supprime l'espace entre les cellules */
-
 }
 
 .mat-header-cell {
   font-weight: bold;
-  background-color: #f1f1f1; /* Couleur d'arrière-plan des en-têtes */
-  color: #333; /* Couleur du texte des en-têtes */
-  border-top-left-radius: 8px; /* Coins arrondis en haut à gauche */
-  border-top-right-radius: 8px; /* Coins arrondis en haut à droite */
+  background-color: #f1f1f1;
+  color: #554d4d;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .mat-cell {
   padding: 8px;
-  border: none; /* Supprime les bordures entre les cellules */
-
+  border: none;
 }
 
 .mat-header-row {
-  background-color: #f1f1f1; /* Couleur d'arrière-plan de la ligne d'en-tête */
+  background-color: #f1f1f1;
 }
 
-/* Style pour la ligne de pied de table (si vous avez besoin de lignes de pied de table) */
 .mat-footer-row {
-  background-color: #f1f1f1; /* Couleur d'arrière-plan de la ligne de pied de table */
+  background-color: #f1f1f1;
 }
 
-/* Coins arrondis en bas de la table */
 .mat-table-container {
-  border-radius: 8px; /* Coins arrondis pour la table */
-  overflow: hidden; /* Assure que le contenu ne dépasse pas les coins arrondis */
-  border: 1px solid #ddd; /* Bordure légère autour de la table */
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ddd;
 }
 
-/* Supprime les lignes de séparation */
 .mat-cell,
 .mat-header-cell {
-  border-bottom: none; /* Supprime les lignes de séparation entre les cellules */
+  border-bottom: none;
 }
 
 .mat-header-cell,
 .mat-cell {
-  background-color: transparent; /* Arrière-plan transparent pour les cellules */
+  background-color: transparent;
 }
 
 .mat-icon-button {
@@ -123,7 +166,7 @@
 .mat-paginator .mat-paginator-range-label {
   margin: 0 10px;
 }
-h3 {
-  color: #d47d41;
-}
 
+h3 {
+  color: #d47d41; /* Match the image header color */
+}

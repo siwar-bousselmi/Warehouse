@@ -1,0 +1,61 @@
+<div class="warehouse-create-container">
+  <h2>Créer un entrepôt</h2>
+  <form [formGroup]="warehouseForm" (ngSubmit)="onSubmit()" class="warehouse-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="libelle">Libellé</label>
+        <input id="libelle" formControlName="libelle" type="text">
+        <div *ngIf="warehouseForm.get('libelle')!.invalid && (warehouseForm.get('libelle')!.touched || warehouseForm.get('libelle')!.dirty)" class="error-message">
+          <div *ngIf="warehouseForm.get('libelle')!.hasError('required')">Le libellé est requis.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="longitude">Longitude</label>
+        <input id="longitude" formControlName="longitude" type="number">
+        <div *ngIf="warehouseForm.get('longitude')!.invalid && (warehouseForm.get('longitude')!.touched || warehouseForm.get('longitude')!.dirty)" class="error-message">
+          <div *ngIf="warehouseForm.get('longitude')!.hasError('required')">La longitude est requise.</div>
+          <div *ngIf="warehouseForm.get('longitude')!.hasError('min')">La longitude doit être supérieure ou égale à -180.</div>
+          <div *ngIf="warehouseForm.get('longitude')!.hasError('max')">La longitude doit être inférieure ou égale à 180.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="superficie">Superficie (m²)</label>
+        <input id="superficie" formControlName="superficie" type="number">
+        <div *ngIf="warehouseForm.get('superficie')!.invalid && (warehouseForm.get('superficie')!.touched || warehouseForm.get('superficie')!.dirty)" class="error-message">
+          <div *ngIf="warehouseForm.get('superficie')!.hasError('required')">La superficie est requise.</div>
+          <div *ngIf="warehouseForm.get('superficie')!.hasError('min')">La superficie doit être positive.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="latitude">Latitude</label>
+        <input id="latitude" formControlName="latitude" type="number">
+        <div *ngIf="warehouseForm.get('latitude')!.invalid && (warehouseForm.get('latitude')!.touched || warehouseForm.get('latitude')!.dirty)" class="error-message">
+          <div *ngIf="warehouseForm.get('latitude')!.hasError('required')">La latitude est requise.</div>
+          <div *ngIf="warehouseForm.get('latitude')!.hasError('min')">La latitude doit être supérieure ou égale à -90.</div>
+          <div *ngIf="warehouseForm.get('latitude')!.hasError('max')">La latitude doit être inférieure ou égale à 90.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="place">Place</label>
+        <input id="place" formControlName="place" type="text">
+        <div *ngIf="warehouseForm.get('place')!.invalid && (warehouseForm.get('place')!.touched || warehouseForm.get('place')!.dirty)" class="error-message">
+          <div *ngIf="warehouseForm.get('place')!.hasError('required')">La place est requise.</div>
+        </div>
+      </div>
+      <div class="form-group">
+      </div>
+    </div>
+    <div class="form-actions">
+      <button type="button" (click)="onCancel()" class="cancel-button">Annuler</button>
+      <button type="submit" [disabled]="warehouseForm.invalid" class="submit-button">Enregistrer</button>
+    </div>
+  </form>
+</div>

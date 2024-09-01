@@ -237,3 +237,17 @@ mat-icon.toggle-password:hover {
     color: #d47d41;
     font-weight: bold;
 }
+.error-message {
+    color: #f44336; /* Red color for errors */
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+/* Style pour les champs de formulaire invalides */
+.form-group input.ng-invalid.ng-touched {
+    border-color: #f44336; /* Bordure rouge pour les champs invalides */
+  }
+  
+  .form-group input.ng-valid.ng-touched {
+    border-color: #4caf50; /* Bordure verte pour les champs valides */
+  }

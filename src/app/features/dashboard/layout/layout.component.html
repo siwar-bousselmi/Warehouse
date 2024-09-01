@@ -64,25 +64,12 @@
     </div>
     <div class="header-left">
       <h5>Tableau de Bord > Administration</h5>
-      <button class="btn-create">Créer un entrepôt</button>
+      <button class="btn-create" (click)="navigateToCreateWarehouse()">Créer un entrepôt</button>
     </div>
   </header>
 
   <div class="layout-body">
-    <aside class="sidebar">
-      <ul>
-        <li><a routerLink="/campaigns">Campagnes</a></li>
-        <li><a routerLink="/campaign-details">Détails campagne</a></li>
-        <li><a routerLink="/speculations">Spéculations</a></li>
-        <li><a routerLink="/warehouses" class="active">Entrepôts</a></li>
-        <li><a routerLink="/groups">Groupements</a></li>
-        <li><a routerLink="/exporters">Exportateurs</a></li>
-        <li><a routerLink="/exporter-assignments">Affectations exportateurs</a></li>
-        <li><a routerLink="/cities">Villes</a></li>
-        <li><a routerLink="/sites">Sites</a></li>
-        <li><a routerLink="/zonings">Zonages</a></li>
-      </ul>
-    </aside>
+
 
     <main class="main-content">
       <router-outlet></router-outlet>

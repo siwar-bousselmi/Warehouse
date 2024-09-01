@@ -32,10 +32,6 @@
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
-
-    &:hover {
-      background-color: #0056b3;
-    }
   }
 
 }
@@ -122,9 +118,6 @@
   justify-content: center;
 }
 
-.btn-notification:hover {
-  background-color: #0056b3;
-}
 
 .dropdown-container {
   position: relative;
@@ -245,44 +238,6 @@
 .dropdown-menu a:hover {
   background-color: #f1f1f1;
 }
-
-.sidebar {
-  width: 300px;
-  background-color: #e5e7eb;
-  margin: 30px;
-
-  ul {
-    list-style: none;
-    padding: 20px;
-
-    li {
-      position: relative;
-      margin-bottom: 15px;
-      padding: 10px;
-
-      a {
-        text-decoration: none;
-        font-weight: bold;
-        color: #272424;
-
-
-        &:hover {
-          color: #d47d41;
-          background-color: #dfccd4; /* Change this color to fit your design */
-
-        }
-        &::after {
-          content: "12"; /* Number to be displayed */
-          position: absolute;
-          right: 10px; /* Adjust this value to position the number properly */
-          font-weight: bold;
-          font-size: 14px; /* Adjust font size as needed */
-        }
-      }
-    }
-  }
-}
-
 .main-content {
   flex-grow: 1;
   padding: 20px;

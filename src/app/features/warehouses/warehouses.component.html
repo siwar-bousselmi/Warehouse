@@ -1,56 +1,74 @@
 <main class="main-content">
+
+  <aside class="sidebar">
+    <ul>
+      <li><a href="#">Campagnes</a></li>
+      <li><a href="#">Détails campagne</a></li>
+      <li><a href="#">Spéculations</a></li>
+      <li class="active"><a href="#">Entrepôts</a></li>
+      <li><a href="#">Groupements</a></li>
+      <li><a href="#">Exportateurs</a></li>
+      <li><a href="#">Affectations exportateurs</a></li>
+      <li><a href="#">Villes</a></li>
+      <li><a href="#">Sites</a></li>
+      <li><a href="#">Zonages</a></li>
+    </ul>
+  </aside>
+
+  <div class="content">
     <div class="table-header">
-        <h3>Historique Entrepôts</h3>
-        <div class="search-zone">
-            <div class="search-wrapper">
-               <mat-icon class="search-icon">search</mat-icon>
-               <input
-                type="text"
-                [(ngModel)]="searchTerm"
-                placeholder="Rechercher..."
-                class="search-input"
-              />
-            </div>
-          </div>
+      <h3>Historique Entrepôts</h3>
+      <div class="search-zone">
+        <div class="search-wrapper">
+          <mat-icon class="search-icon">search</mat-icon>
+          <input
+            type="text"
+            [(ngModel)]="searchTerm"
+            placeholder="Rechercher..."
+            class="search-input"
+          />
+        </div>
       </div>
-
-      <!-- Data Table -->
-      <table mat-table [dataSource]="dataSource" matSort table-borderless>
-
-        <!-- ID Column -->
-        <ng-container matColumnDef="libelle">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header [style.background-color]="color">Libellé</th>
-          <td mat-cell *matCellDef="let element">{{element.libelle}}</td>
-        </ng-container>
-
-        <!-- Name Column -->
-        <ng-container matColumnDef="superficie">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header [style.background-color]="color">Superficie(M)</th>
-          <td mat-cell *matCellDef="let element">{{element.superficie}}</td>
-        </ng-container>
-
-        <!-- Location Column -->
-        <ng-container matColumnDef="place">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header [style.background-color]="color">Place</th>
-          <td mat-cell *matCellDef="let element">{{element.place}}</td>
-        </ng-container>
-
-        <!-- Actions Column -->
-        <ng-container matColumnDef="actions">
-          <th mat-header-cell *matHeaderCellDef [style.background-color]="color">Actions</th>
-          <td mat-cell *matCellDef="let element">
-            <button mat-icon-button (click)="deleteElement(element)" class="delete-button">
-              <mat-icon>delete</mat-icon>
-            </button>
-          </td>
-        </ng-container>
-
-        <!-- Table Header and Rows -->
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-
-      <!-- Pagination Controls -->
-      <mat-paginator [pageSizeOptions]="[50, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+  
+    <!-- Data Table -->
+    <table mat-table [dataSource]="dataSource" matSort class="mat-table-container">
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="libelle">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header [style.background-color]="color">Libellé</th>
+        <td mat-cell *matCellDef="let element">{{element.libelle}}</td>
+      </ng-container>
+  
+      <!-- Superficie Column -->
+      <ng-container matColumnDef="superficie">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header [style.background-color]="color">Superficie (M²)</th>
+        <td mat-cell *matCellDef="let element">{{element.superficie}}</td>
+      </ng-container>
+  
+      <!-- Place Column -->
+      <ng-container matColumnDef="place">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header [style.background-color]="color">Place</th>
+        <td mat-cell *matCellDef="let element">{{element.place}}</td>
+      </ng-container>
+  
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef [style.background-color]="color">Actions</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="deleteElement(element)" class="delete-button">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+      <!-- Table Header and Rows -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <!-- Pagination Controls -->
+    <mat-paginator [pageSizeOptions]="[50, 100]" showFirstLastButtons></mat-paginator>
+  </div>
+ 
 </main>
-

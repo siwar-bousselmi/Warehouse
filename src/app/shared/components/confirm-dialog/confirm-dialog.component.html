@@ -1,1 +1,11 @@
-<p>confirm-dialog works!</p>
+
+
+<div class="modal-overlay">
+  <div class="modal-content">
+    <button class="close-button" (click)="close()">×</button>
+    <h3>Voulez-vous enregistrer ?</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <button (click)="cancel()" class="cancel-button">Non</button>
+    <button (click)="confirm()" class="confirm-button">Oui</button>
+  </div>
+</div>

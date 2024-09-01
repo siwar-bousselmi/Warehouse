@@ -27,6 +27,8 @@ import { WarehousesComponent } from './features/warehouses/warehouses.component'
 import { RouterModule } from '@angular/router';
 import { LayoutComponent } from './features/dashboard/layout/layout.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CreateWarehouseComponent } from './features/create-warehouse/create-warehouse.component';
+
 
 @NgModule({
   declarations: [
@@ -34,10 +36,14 @@ import { AppRoutingModule } from './app-routing.module';
     AuthComponent,
     ConfirmDialogComponent,
     WarehousesComponent,
-    LayoutComponent,
-    
+    LayoutComponent,   
+    CreateWarehouseComponent
+
   ],
   imports: [
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
     MatSnackBarModule,
     AppRoutingModule,
     MatTableModule,
@@ -58,7 +64,9 @@ import { AppRoutingModule } from './app-routing.module';
     MatSortModule,
     MatFormFieldModule,
     MatInputModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+
 ],
   providers: [AuthService, FirestoreService, provideAnimationsAsync()],
   bootstrap: [AppComponent],

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-confirm-dialog',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmDialogComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public dialogRef: MatDialogRef<ConfirmDialogComponent>) {}
   ngOnInit(): void {
+  }
+  confirm(): void {
+    this.dialogRef.close(true);
+  }
+
+  cancel(): void {
+    this.dialogRef.close(false);
+  }
+
+  close(): void {
+    this.dialogRef.close(); // Ferme la modal sans confirmer ni annuler
   }
 
 }

@@ -1,0 +1,87 @@
+/* Styles pour l'overlay de la modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styles pour le contenu de la modal */
+.modal-content {
+  position: relative; /* Position relative pour permettre le positionnement du bouton de fermeture */
+  background: #fff; /* Fond blanc */
+  border-radius: 8px; /* Coins arrondis */
+  padding: 20px; /* Espacement interne */
+  max-width: 500px; /* Largeur maximale */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée */
+  text-align: center; /* Alignement du texte au centre */
+}
+
+/* Styles pour le bouton de fermeture */
+.close-button {
+  position: absolute; /* Positionner le bouton dans le coin */
+  top: 10px; /* Espacement depuis le haut */
+  right: 10px; /* Espacement depuis la droite */
+  background: #f3dfe3; /* Couleur de fond */
+  border: none; /* Aucun bord */
+  border-radius: 50%; /* Rendre le bouton rond */
+  width: 30px; /* Largeur du bouton */
+  height: 30px; /* Hauteur du bouton */
+  font-size: 18px; /* Taille de la police réduite */
+  color: #d47d41; /* Couleur du texte */
+  display: flex; /* Flexbox pour centrer le texte */
+  align-items: center; /* Centrer verticalement */
+  justify-content: center; /* Centrer horizontalement */
+  cursor: pointer; /* Curseur en forme de main */
+  transition: background-color 0.3s, color 0.3s; /* Transition douce pour le survol */
+}
+
+.close-button:hover {
+  background-color: #e0b7a6; /* Couleur de fond au survol */
+  color: #a53c1d; /* Couleur du texte au survol */
+}
+
+/* Styles pour les boutons dans la modal */
+.modal-content button {
+  background-color: #d47d41; /* Couleur de fond du bouton */
+  color: #fff; /* Couleur du texte du bouton */
+  border: none; /* Retirer la bordure */
+  padding: 10px 20px; /* Espacement interne */
+  border-radius: 4px; /* Coins arrondis */
+  cursor: pointer; /* Curseur en forme de main */
+  margin: 5px; /* Espacement autour des boutons */
+  font-size: 16px; /* Taille de la police */
+}
+
+.modal-content button.cancel-button {
+  background-color: #f3dfe3; /* Couleur de fond pour le bouton Confirmer */
+  color: #d47d41;
+}
+
+.modal-content button.confirm-button {
+  background-color: #d47d41; /* Couleur de fond pour le bouton Annuler */ 
+  color: #f3dfe3;
+}
+
+/* Styles pour les boutons au survol */
+.modal-content button:hover {
+  opacity: 0.8; /* Réduction de l'opacité au survol */
+}
+
+.modal-content button.close-button {
+  background-color: #f3dfe3; /* Couleur de fond pour le bouton Confirmer */
+  color: #d47d41;
+}
+
+h3 {
+  color: #d47d41;
+}
+
+p {
+  color: #979492;
+}

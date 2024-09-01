@@ -1,8 +1,7 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-
+import { FirestoreService } from '../../core/services/firestore.service';
 
 @Component({
   selector: 'app-warehouses',
@@ -11,33 +10,25 @@ import { MatSort } from '@angular/material/sort';
 })
 export class WarehousesComponent implements OnInit {
   displayedColumns: string[] = ['libelle', 'superficie', 'place', 'actions'];
-  dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
+  dataSource = new MatTableDataSource<Element>();
   searchTerm: string = '';
-
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
+  constructor(private firestoreService: FirestoreService) {}
+
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
+      this.firestoreService.getWarehouses().subscribe(data => {
+      this.dataSource.data = data;
+      this.dataSource.paginator = this.paginator;
+    });
+
   }
 
-  color = 'pink'
-
+  color = '#ebbcc4'; // Update the color to match the image
 
   deleteElement(element: Element) {
     // Handle delete action
   }
 }
 
-// Example data type and data
-export interface Element {
-  libelle: string;
-  superficie: string;
-  place: string;
-}
-
-const ELEMENT_DATA: Element[] = [
-  {libelle: "1", superficie: 'Warehouse A', place: 'Location A'},
-  {libelle: "2", superficie: 'Warehouse B', place: 'Location B'},
-  // Add more data here
-];
